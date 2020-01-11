@@ -5,15 +5,19 @@ import HelloWorld from '../views/login/HelloWorld'
 Vue.use(Router)
 
 
-/*export var constantRouterMap = [
+export var constantRouterMap = [
+  { path: '/', component: () => import('../views/login/HelloWorld'),meta: {
+      title: '',
+      requireAuth: true,  // 添加该字段，表示进入这个路由是需要登录的
+    },hidden:true},
   { path: '/login', component: () => import('../views/login/HelloWorld'),hidden:true}
 ]
 export default new Router({
   routes: constantRouterMap
-})*/
+})
 
 
-export default new Router({
+/*export default new Router({
   routes: [
     {
       path: '/',
@@ -29,4 +33,4 @@ export default new Router({
       component: HelloWorld
     }
   ]
-})
+})*/
