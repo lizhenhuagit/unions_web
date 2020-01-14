@@ -51,54 +51,18 @@
 
     },
     methods:{
-      handleLogin(){
-     /*   axios.post('localhost:8080/product/login', this.ruleForm).then((res) => {
+      handleLogin() {
+        /*   axios.post('localhost:8080/product/login', this.ruleForm).then((res) => {
           alert("nihao a ")
         })*/
 
         axios.post('/product/login', this.ruleForm).then((res) => {
-          console.log(res)
+          this.$router.push('/layout')
+        }).catch((err) => {
+          console.log(err)
         })
 
-        /*axios.post('/getMainInfo?id=123')
-          .then((res) => {
-            console.log(res)
-          })
-          .catch((err) => {
-            console.log(err)
-          })
-*/
-
-        /*.catch(() => {
-              this.$message({
-                type: 'info',
-                message: '已取消删除'
-              })
-            })*/
-      },
-      // deleteRow(index, row) {
-      //   this.$confirm('确定要删除该数据吗?', '提示', {
-      //     confirmButtonText: '确定',
-      //     cancelButtonText: '取消',
-      //     type: 'warning'
-      //   }).then(() => {
-      //
-      //     var id = row.id
-      //     axios.post('/api/crdms-drug-manage/routeEdit/deleteReference', qs.stringify({id})).then((res) => {
-      //       console.log(res);
-      //       this.$message({type: 'success', message: '操作成功!'})
-      //       this.fileSource()
-      //
-      //
-      //     })
-      //
-      //   }).catch(() => {
-      //     this.$message({
-      //       type: 'info',
-      //       message: '已取消删除'
-      //     })
-      //   })
-      // },
+      }
     }
   }
 </script>

@@ -10,6 +10,7 @@ export var constantRouterMap = [
       requireAuth: true,  // 添加该字段，表示进入这个路由是需要登录的
     },hidden:true},
   { path: '/login', component: () => import('../views/login/HelloWorld'),hidden:true},
+  { path: '/layout', component: () => import('../views/layout/layout'),hidden:true},
   { path: '/home', component: () => import('../views/login/index'),hidden:true}
 ]
 export default new Router({
