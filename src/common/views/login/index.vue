@@ -17,10 +17,17 @@
         <el-input type="password" v-model="ruleForm.passWord" ></el-input>
       </el-form-item>
 
-      <el-form-item>
-        <el-button :loading="loading" type="primary" style="width:100%;" @click="handleLogin" >
-          登 录
-        </el-button>
+      <el-form-item >
+        <el-row style="text-align: center">
+          <el-button  :loading="loading" type="primary" style="width:20%;" @click="handleLogin" >
+            登 录
+          </el-button>
+
+          <el-button :loading="loading" type="primary" style="width:20%;" @click="handleLogin" >
+            注 册
+          </el-button>
+        </el-row>
+
       </el-form-item>
     </el-form>
 
@@ -29,6 +36,8 @@
 </template>
 
 <script>
+  import axios from 'axios'
+
   export default {
     name: 'index',
     data () {
@@ -43,8 +52,29 @@
     },
     methods:{
       handleLogin(){
-        console.log(this.ruleForm)
+     /*   axios.post('localhost:8080/product/login', this.ruleForm).then((res) => {
+          alert("nihao a ")
+        })*/
 
+        axios.post('/product/login', this.ruleForm).then((res) => {
+          console.log(res)
+        })
+
+        /*axios.post('/getMainInfo?id=123')
+          .then((res) => {
+            console.log(res)
+          })
+          .catch((err) => {
+            console.log(err)
+          })
+*/
+
+        /*.catch(() => {
+              this.$message({
+                type: 'info',
+                message: '已取消删除'
+              })
+            })*/
       },
       // deleteRow(index, row) {
       //   this.$confirm('确定要删除该数据吗?', '提示', {
@@ -95,21 +125,21 @@
       margin: 120px auto;
 
       background: $bg;
-      .el-form-item {
-        border: none;
-        background: $bg;
-        border-radius: 0px;
-        color: #454545;
-      }
+
     }
+
     .el-form-item{
+      border: none;
+      background: $bg;
+      border-radius: 0px;
+      color: #454545;
+
       margin-left: 40px;
       margin-right: 46px;
       .el-input{
         width: 90%;
       }
     }
-
     .logo{
       text-align: center;
       img{

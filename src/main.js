@@ -5,11 +5,15 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import App from './App'
 import router from './common/router'
+import axios from 'axios'
+import VueAxios from 'vue-axios'
 
 
 
+axios.defaults.baseURL = '/api'
 Vue.config.productionTip = false
 Vue.use(ElementUI)
+Vue.use(VueAxios,axios)
 
 
 router.beforeEach((to, from, next) => {
