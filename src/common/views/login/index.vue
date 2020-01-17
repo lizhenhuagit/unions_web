@@ -2,7 +2,7 @@
   <div class="back_ground">
     <el-form class="login-form" :model="ruleForm" ref="ruleForm">
       <div class="logo"><img src="/static/img/tianlang.png" ></div>
-      <div class="title">天空之城会员管理平台</div>
+      <div class="title">风之谷会员管理平台</div>
 
       <el-form-item
         prop="userName"
