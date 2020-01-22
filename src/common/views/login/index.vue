@@ -115,7 +115,7 @@
       font-weight: 500;
       letter-spacing:20px;
       margin: 30px 0px 20px 0px;
-      padding-left: 20px;
+      padding-left: 40px;
       color: black;
     }
   }
